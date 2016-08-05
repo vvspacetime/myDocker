@@ -6,7 +6,7 @@ class Docker(object):
     def __init__(self,base_url = ''):
         self.cli = Client(base_url=base_url)
         self.containers = []
-        self.images = 'docker/whalsay'
+        self.images = 'docker/whalesay'
 
     def build(self):
         self.cli.build(path='../../dockfiles/'+self.images,rm=True,tag=self.images)
