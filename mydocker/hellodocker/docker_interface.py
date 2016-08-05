@@ -12,7 +12,9 @@ class Docker(object):
         self.cli.build(path='../../dockfiles/'+self.images,rm=True,tag=self.images)
 
     def create(self):
-        container = self.cli.create_container(image=self.images + ':latest',command='cowsay boo',detach=True)
+        container = self.cli.create_container(image=self.images + ':latest',
+                                              command='cowsay boo',detach=True,
+                                              name=(self.images + ": " + (len(self.containers)-1).__str__()))
         self.containers.append(container)
         return len(self.containers) - 1
 
