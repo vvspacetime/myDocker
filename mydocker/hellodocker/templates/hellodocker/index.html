@@ -1,7 +1,7 @@
 <ul>
 {% for app in app_list %}
     <li>
-    ID : {{ app.id }} Date : {{app.create_date}}
+    ID : {{ app.id }} Date : {{app.create_date}} No. : {{ app.number }}
     <button onclick="deleteApp(this.value)" value="{{ app.id }}" >Delete</button>
     </li>
 {% endfor %}
